@@ -1,25 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { AppContainer } from 'react-hot-loader';
-import App from './components/App';
+import ReactDom from 'react-dom';
 
-ReactDOM.render(
-  <AppContainer>
-    <App/>
-  </AppContainer>,
+import App from './components/App.js';
+
+ReactDom.render(
+
+  <App/>,
   document.getElementById('root')
 );
-
-// Hot Module Replacement API
-if (module.hot) {
-  module.hot.accept('./components/App', () => {
-    const NextApp = require('./components/App').default;
-    ReactDOM.render(
-      <AppContainer>
-        <NextApp/>
-      </AppContainer>
-      ,
-      document.getElementById('root')
-    );
-  });
-}
