@@ -1,8 +1,9 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 
 const propTypes = {
-  number: PropTypes.number
+  numbers: PropTypes.number
 };
 const defaultProps = {
   number: -1
