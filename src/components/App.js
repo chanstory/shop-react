@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Counter from './Counter';
+import Login from './Login';
 
 const propTypes = {
 };
 const defaultProps = {
 };
 
-	
+
 
 class App extends Component {
     constructor(props) {
@@ -37,8 +38,7 @@ class App extends Component {
     render() {
         return(
             <div>
-              <Counter/>
-			  <h3>{this.state.data ? this.state.data : '데이터 불러오는 중'}</h3>
+			  <Login/>
             </div>
         );
     }
