@@ -17,28 +17,14 @@ class App extends Component {
 			data: ''
 		};
 
-		this.callApi = this.callApi.bind(this);
     }
 
-	//api 테스트 로직
-	callApi(){
-    fetch("http://localhost:8081/rest")
-      .then(res => res.json())
-      .then(json => {
-        this.setState({
-          data: json.test
-        })
-      })
-  }
 
-  componentDidMount() {
-    this.callApi();
-  }
 
     render() {
         return(
             <div>
-			  <Login/>
+             <Login/>
             </div>
         );
     }

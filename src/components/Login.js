@@ -18,7 +18,7 @@ class Login extends Component {
 
     //api 테스트 로직
 	callApi(){
-    fetch("http://localhost:8081/rest")
+        fetch("http://localhost:8081/rest")
         .then(res => res.json())
             .then(json => {
                 this.setState({
@@ -30,10 +30,16 @@ class Login extends Component {
     render() {
         return(
             <div>
-                <input type="text" id="loginId" placeholder="id"></input>
-                <input type="password" id="loginPassword" placeholder="password"></input>
-                <input type="button" id="login" value="login" onClick={this.callApi}></input>
-                <h3>{this.state.data ? this.state.data : '데이터 불러오는 중'}</h3>
+                <div>
+                    <input type="text" id="loginId" placeholder="id"></input>
+                    <input type="button" id="login" value="login" onClick={this.callApi}></input>
+                </div>
+                <div>
+                    <input type="password" id="loginPassword" placeholder="password"></input>
+                </div>
+                <div>
+                    <input type="button" id="join" value="회원가입"></input>
+                </div>
             </div>
         );
     }
