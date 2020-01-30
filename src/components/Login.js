@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import { Link } from 'react-router-dom';
 
 const propTypes = {
 };
@@ -9,22 +10,8 @@ const defaultProps = {
 class Login extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-			data: ''
-		};
 
-        this.callApi = this.callApi.bind(this);
-    }
 
-    //api 테스트 로직
-	callApi(){
-        fetch("http://localhost:8081/rest")
-        .then(res => res.json())
-            .then(json => {
-                this.setState({
-                data: json.test
-            })
-        })
     }
 
     render() {
@@ -38,7 +25,7 @@ class Login extends Component {
                     <input type="password" id="loginPassword" placeholder="password"></input>
                 </div>
                 <div>
-                    <input type="button" id="join" value="회원가입"></input>
+                    <Link to="/join"><input type="button" id="join" value="회원가입"></input></Link>
                 </div>
             </div>
         );

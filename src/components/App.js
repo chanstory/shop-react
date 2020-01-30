@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Counter from './Counter';
-import { Route } from 'react-router-dom';
-import Login from './Login';
 
+import { BrowserRouter, Route } from 'react-router-dom';
+
+import Login from './Login';
+import Join from './Join';
 
 const propTypes = {
 };
@@ -21,13 +22,13 @@ class App extends Component {
 
     }
 
-
-
     render() {
         return(
             <div>
-                //<Route exact path="/" component={Login}/>
-                <Login/>
+                <BrowserRouter>
+                    <Route exact path="/" component={Login}/>
+                    <Route exact path="/join" component={Join}/>
+                </BrowserRouter>
             </div>
         );
     }
