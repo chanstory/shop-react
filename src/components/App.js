@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Counter from './Counter';
+import { Route } from 'react-router-dom';
 import Login from './Login';
+
 
 const propTypes = {
 };
@@ -24,7 +26,8 @@ class App extends Component {
     render() {
         return(
             <div>
-             <Login/>
+                //<Route exact path="/" component={Login}/>
+                <Login/>
             </div>
         );
     }
