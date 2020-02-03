@@ -5,13 +5,12 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 import Login from './Login';
 import Join from './Join';
+import Main from './Main';
 
 const propTypes = {
 };
 const defaultProps = {
 };
-
-
 
 class App extends Component {
     constructor(props) {
@@ -28,6 +27,7 @@ class App extends Component {
                 <BrowserRouter>
                     <Route exact path="/" component={Login}/>
                     <Route exact path="/join" component={Join}/>
+                    <Route exact path="/main" component={Main}/>
                 </BrowserRouter>
             </div>
         );
