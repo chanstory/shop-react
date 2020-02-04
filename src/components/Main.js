@@ -8,6 +8,10 @@ import { observer } from 'mobx-react';
 
 import { Link } from 'react-router-dom';
 
+import { Jumbotron , Nav, NavItem, NavLink} from 'reactstrap';
+
+import '../css/Main.css';
+
 const propTypes = {
 };
 const defaultProps = {
@@ -18,7 +22,25 @@ class Main extends Component {
     }
     render() {
         return(
-            <div>Main</div>
+            <div>
+                <Jumbotron>
+                    메인
+                </Jumbotron>
+                <Nav vertical>
+                    <NavItem>
+                      <NavLink href="#">Link</NavLink>
+                    </NavItem>
+                    <NavItem>
+                      <NavLink href="#">Link</NavLink>
+                    </NavItem>
+                    <NavItem>
+                      <NavLink href="#">Another Link</NavLink>
+                    </NavItem>
+                    <NavItem>
+                      <NavLink disabled href="#">Disabled Link</NavLink>
+                    </NavItem>
+                </Nav>
+            </div>
         );
     }
 }

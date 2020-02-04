@@ -6,6 +6,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Login from './Login';
 import Join from './Join';
 import Main from './Main';
+import 'bootstrap/dist/css/bootstrap.css';
 
 const propTypes = {
 };
@@ -16,7 +17,6 @@ class App extends Component {
     constructor(props) {
         super(props);
 		this.state = {
-			data: ''
 		};
 
     }
