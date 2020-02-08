@@ -1,11 +1,8 @@
 import React, { Component} from 'react';
-import PropTypes from 'prop-types';
 import axios from 'axios';
 
-import { decorate, observable, action } from 'mobx';
+import { observable, action } from 'mobx';
 import { observer } from 'mobx-react';
-
-import { withRouter } from "react-router-dom";
 
 const propTypes = {
 };
@@ -60,7 +57,7 @@ class Join extends Component {
         }
 
 
-        if(this.property.joinPassword != this.property.duplicatePassword){
+        if(this.property.joinPassword !== this.property.duplicatePassword){
             document.getElementById('pwDuplicate').innerHTML = '비밀번호가 일치하지 않습니다.';
             this.property.pwDuplicateValue = 'unChecked';
 

@@ -1,17 +1,11 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import axios from 'axios';
 
-import { decorate, observable, action } from 'mobx';
+import { observable, action } from 'mobx';
 import { observer } from 'mobx-react';
 
-import { Link, withRouter } from 'react-router-dom';
-
-const propTypes = {
-};
-const defaultProps = {
-};
+import { Link } from 'react-router-dom';
 
 @observer
 class Login extends Component {

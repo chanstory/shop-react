@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import { BrowserRouter, Route } from 'react-router-dom';
 
-import Login from './Login';
-import Join from './Join';
-import Main from './Main';
+import Login from './login/Login';
+import Join from './join/Join';
+import Main from './main/Main';
 
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -28,9 +27,9 @@ class App extends Component {
         return(
             <div>
                 <BrowserRouter>
-                    <Route exact path="/" component={Login}/>
+                    <Route exact path="/" component={Main}/>
                     <Route exact path="/join" component={Join}/>
-                    <Route exact path="/main" component={Main}/>
+                    <Route exact path="/login" component={Login}/>
                 </BrowserRouter>
             </div>
         );
