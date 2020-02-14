@@ -16,7 +16,7 @@ import Navigation from '../navigation/Navigation';
 import Category from '../category/Category';
 import Footer from '../footer/Footer';
 import MainImage from '../mainImage/MainImage';
-import Row from '../row/Row';
+import Rows from '../row/Rows';
 
 const propTypes = {
 };
@@ -39,7 +39,7 @@ class Main extends Component {
                         {/*.col-lg-3 end*/}
                         <div className="col-lg-9">
                             <MainImage/>
-                            <Row/>
+                            <Rows/>
                             {/*.row end*/}
                         </div>
                         {/*.col-lg-9 end*/}

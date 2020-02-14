@@ -20,18 +20,21 @@ class Navigation extends Component {
                 <div className="collapse navbar-collapse" id="navbarResponsive">
                   <ul className="navbar-nav ml-auto">
                     <li className="nav-item active">
-                      <a className="nav-link" href="#">Home
+                      <a className="nav-link" href="/login">로그인
                         <span className="sr-only">(current)</span>
                       </a>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="#">About</a>
+                      <a className="nav-link" href="/join">회원가입</a>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="#">Services</a>
+                      <a className="nav-link" href="#">마이페이지</a>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="#">Contact</a>
+                      <a className="nav-link" href="#">주문조회</a>
+                    </li>
+                    <li className="nav-item">
+                      <a className="nav-link" href="#">장바구니</a>
                     </li>
                   </ul>
                 </div>

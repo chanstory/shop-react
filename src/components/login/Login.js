@@ -37,13 +37,11 @@ class Login extends Component {
         }
 
         var self = this;
-        axios.post("http://localhost:8081/login", {
-            loginId : self.property.loginId,
-            loginPassword : self.property.loginPassword
-        })
+        axios.get("http://localhost:8081/login?loginId="       + self.property.loginId +
+                                             "&loginPassword=" + self.property.loginPassword)
         .then(function (response) {
             if(response.data.result === 'success'){
-                self.props.history.push("/main");
+                self.props.history.push("/");
             }else if(response.data.result === 'notMatch'){
                 alert('비밀번호를 확인해 주십시오');
             }else if(response.data.result === 'doesNotExist'){
