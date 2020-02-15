@@ -3,9 +3,6 @@ import PropTypes from 'prop-types';
 
 import axios from 'axios';
 
-import { decorate, observable, action } from 'mobx';
-import { observer } from 'mobx-react';
-
 import { Link } from 'react-router-dom';
 
 import { Jumbotron , Nav, NavItem, NavLink} from 'reactstrap';
@@ -17,6 +14,10 @@ import Category from '../category/Category';
 import Footer from '../footer/Footer';
 import MainImage from '../mainImage/MainImage';
 import Rows from '../row/Rows';
+
+import { decorate, observable, action } from 'mobx';
+import { observer } from 'mobx-react';
+
 
 const propTypes = {
 };
