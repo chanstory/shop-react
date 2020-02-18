@@ -1,35 +1,23 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import axios from 'axios';
-
-import { Link } from 'react-router-dom';
-
-import { Jumbotron , Nav, NavItem, NavLink} from 'reactstrap';
-
-import './Main.css';
-
 import Navigation from '../navigation/Navigation';
 import Category from '../category/Category';
 import Footer from '../footer/Footer';
-import MainImage from '../mainImage/MainImage';
 import Rows from '../row/Rows';
-
-import { decorate, observable, action } from 'mobx';
-import { observer } from 'mobx-react';
-
 
 const propTypes = {
 };
 const defaultProps = {
 };
-class Main extends Component {
+class CategoryDetail extends Component {
     constructor(props) {
         super(props);
     }
     render() {
         return(
             <div>
+
                 <Navigation/>
                 {/*Page Content*/}
                 <div className="container">
@@ -39,8 +27,7 @@ class Main extends Component {
                         </div>
                         {/*.col-lg-3 end*/}
                         <div className="col-lg-9">
-                            <MainImage/>
-                            <Rows  condition="count" item="10"/>
+                            <Rows condition="kind" item={this.props.match.params.item}/>
                             {/*.row end*/}
                         </div>
                         {/*.col-lg-9 end*/}
@@ -53,6 +40,7 @@ class Main extends Component {
         );
     }
 }
-Main.propTypes = propTypes;
-Main.defaultProps = defaultProps;
-export default Main;
+
+CategoryDetail.propTypes = propTypes;
+CategoryDetail.defaultProps = defaultProps;
+export default CategoryDetail;

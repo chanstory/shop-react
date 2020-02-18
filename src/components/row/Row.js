@@ -34,7 +34,7 @@ class Row extends Component {
                     <a href="#">{this.props.product.name}</a>
                   </h6>
                   <h6>{this.KRWFormat(this.props.product.price)}원</h6>
-                  <p className="card-text"><h6>{this.props.product.description}</h6></p>
+                  <p className="card-text">{this.props.product.description}</p>
                 </div>
               </div>
             </div>

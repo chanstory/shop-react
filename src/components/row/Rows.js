@@ -27,8 +27,8 @@ class Rows extends Component {
     @action
     componentDidMount(){
         var self = this;
-
-        axios.get("http://localhost:8081/products")
+        axios.get("http://localhost:8081/products/" + this.props.condition
+                                              + "/" + this.props.item)
         .then(function (response) {
 
             //map메서드를 이용해 productList의 길이만큼 Row 컴포넌트를 생성
@@ -47,7 +47,7 @@ class Rows extends Component {
 
     render() {
         return(
-            <div className="row">
+            <div className="row my-4">
                 {this.property.productList}
             </div>
         );
