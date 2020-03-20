@@ -79,7 +79,7 @@ class Join extends Component {
         //then 안에서 this로 접근시 Join의 state에 접근이 불가하기 때문에 this를 self변수에 선언함
         var self = this;
 
-        axios.get("http://localhost:8081/id-duplicate/" + this.property.joinId)
+        axios.get("http://localhost:8081/v1/user/duplicate-check/" + this.property.joinId)
         .then(function (response) {
             if(response.data.duplicateResult === 'available'){
                 alert('사용가능한 아이디 입니다.');

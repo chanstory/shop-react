@@ -27,12 +27,12 @@ class Rows extends Component {
     @action
     componentDidMount(){
         var self = this;
-        axios.get("http://localhost:8081/products/" + this.props.condition
-                                              + "/" + this.props.item)
+        axios.get("http://localhost:8081/v1/products/" + this.props.condition
+                                                 + "/" + this.props.value)
         .then(function (response) {
 
             //map메서드를 이용해 productList의 길이만큼 Row 컴포넌트를 생성
-            self.property.productList = response.data.productList.map((product, index) =>
+            self.property.productList = response.data.list.map((product, index) =>
                 <Row key={index} product={product}/>
             );
 

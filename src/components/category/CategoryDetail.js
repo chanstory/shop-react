@@ -27,7 +27,7 @@ class CategoryDetail extends Component {
                         </div>
                         {/*.col-lg-3 end*/}
                         <div className="col-lg-9">
-                            <Rows condition="kind" item={this.props.match.params.item}/>
+                            <Rows condition="kind" value={this.props.match.params.item}/>
                             {/*.row end*/}
                         </div>
                         {/*.col-lg-9 end*/}

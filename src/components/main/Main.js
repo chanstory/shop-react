@@ -40,7 +40,7 @@ class Main extends Component {
                         {/*.col-lg-3 end*/}
                         <div className="col-lg-9">
                             <MainImage/>
-                            <Rows  condition="count" item="10"/>
+                            <Rows  condition="count" value="12"/>
                             {/*.row end*/}
                         </div>
                         {/*.col-lg-9 end*/}
