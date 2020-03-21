@@ -7,6 +7,11 @@ import { observer } from 'mobx-react';
 
 import { Link } from 'react-router-dom';
 
+import Navigation from '../navigation/Navigation';
+import Footer from '../footer/Footer';
+
+import './Login.css';
+
 @observer
 class Login extends Component {
     @observable
@@ -57,16 +62,20 @@ class Login extends Component {
 
     render() {
         return(
-            <div>
-                <div>
-                    <input type="text" name ="loginId" id="loginId" placeholder="id" onChange={this.handleChange}></input>
-                    <input type="button" id="login" value="login" onClick={this.login}></input>
-                </div>
-                <div>
-                    <input type="password" name="loginPassword" id="loginPassword" placeholder="password" onChange={this.handleChange}></input>
-                </div>
-                <div>
-                    <Link to="/join"><input type="button" id="join" value="회원가입"></input></Link>
+            <div class="loginForm">
+                <div class="text-center my-auto">
+                    <div>
+                        <div>
+                            <input type="text" name ="loginId" id="loginId" placeholder="id" onChange={this.handleChange}></input>
+                        </div>
+                        <div>
+                            <input type="password" name="loginPassword" id="loginPassword" placeholder="password" onChange={this.handleChange}></input>
+                        </div>
+                        <div>
+                            <Link to="/join"><input type="button" id="join" value="회원가입"></input></Link>
+                            <input type="button" id="login" value="login" onClick={this.login}></input>
+                        </div>
+                    </div>
                 </div>
             </div>
         );
