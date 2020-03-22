@@ -62,21 +62,26 @@ class Login extends Component {
 
     render() {
         return(
-            <div class="loginForm">
-                <div class="text-center my-auto">
-                    <div>
-                        <div>
-                            <input type="text" name ="loginId" id="loginId" placeholder="id" onChange={this.handleChange}></input>
-                        </div>
-                        <div>
-                            <input type="password" name="loginPassword" id="loginPassword" placeholder="password" onChange={this.handleChange}></input>
-                        </div>
-                        <div>
-                            <Link to="/join"><input type="button" id="join" value="회원가입"></input></Link>
-                            <input type="button" id="login" value="login" onClick={this.login}></input>
-                        </div>
+            <div>
+                <Navigation/>
+                <div class="border border-dark rounded text-center loginForm">
+                    <div class="font-weight-bold mt-5">
+                        ACCOUNT LOGIN
+                    </div>
+                    <div class="m-1 mt-4">
+                        <input type="text" class="form-control col-lg-10 m-auto" name ="loginId" id="loginId" placeholder="id" onChange={this.handleChange}></input>
+                    </div>
+                    <div class="m-1">
+                        <input type="password" class="form-control col-lg-10 m-auto" name="loginPassword" id="loginPassword" placeholder="password" onChange={this.handleChange}></input>
+                    </div>
+                    <div class="mt-5 mb-2 ml-3 mr-3">
+                        <input type="button" class="btn btn-dark col-lg-10" id="login" value="LOG IN" onClick={this.login}></input>
+                    </div>
+                    <div class="m-2 ml-3 mr-3">
+                        <Link to="/join"><input type="button" class="btn btn-dark col-lg-10" id="join" value="회원가입"></input></Link>
                     </div>
                 </div>
+                <Footer/>
             </div>
         );
     }

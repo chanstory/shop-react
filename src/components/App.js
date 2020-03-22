@@ -26,14 +26,12 @@ class App extends Component {
 
     render() {
         return(
-            <div>
-                <BrowserRouter>
-                    <Route exact path="/" component={Main}/>
-                    <Route exact path="/join" component={Join}/>
-                    <Route exact path="/login" component={Login}/>
-                    <Route exact path="/category-detail/:item" component={CategoryDetail}/>
-                </BrowserRouter>
-            </div>
+            <BrowserRouter>
+                <Route exact path="/" component={Main}/>
+                <Route exact path="/join" component={Join}/>
+                <Route exact path="/login" component={Login}/>
+                <Route exact path="/category-detail/:item" component={CategoryDetail}/>
+            </BrowserRouter>
         );
     }
 }
