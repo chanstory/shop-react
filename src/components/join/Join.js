@@ -4,6 +4,11 @@ import axios from 'axios';
 import { observable, action } from 'mobx';
 import { observer } from 'mobx-react';
 
+import Navigation from '../navigation/Navigation';
+import Footer from '../footer/Footer';
+
+import './Join.css';
+
 const propTypes = {
 };
 const defaultProps = {
@@ -46,12 +51,14 @@ class Join extends Component {
         if(document.getElementById('pwDuplicate') == null){
             var pwDuplicate = document.createElement('span');
             pwDuplicate.setAttribute("id", "pwDuplicate");
+            pwDuplicate.setAttribute("class", "col-lg-12 text-center");
             document.getElementById('pwDupDiv').appendChild(pwDuplicate);
         }
 
         var pwReg = /^.*(?=^.{8,15}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/;
         if(!pwReg.test(this.property.joinPassword)){
             document.getElementById('pwDuplicate').innerHTML = '비밀번호는 영문, 숫자, 특수문자가 1개이상씩 포함되어 8~15 자리여야 합니다.';
+            document.getElementById('pwDuplicate').setAttribute("style", "font-size: small; color: red");
             this.property.pwDuplicateValue = 'unChecked';
             return;
         }
@@ -59,10 +66,12 @@ class Join extends Component {
 
         if(this.property.joinPassword !== this.property.duplicatePassword){
             document.getElementById('pwDuplicate').innerHTML = '비밀번호가 일치하지 않습니다.';
+            document.getElementById('pwDuplicate').setAttribute("style", "font-size: small; color: red");
             this.property.pwDuplicateValue = 'unChecked';
 
         }else{
             document.getElementById('pwDuplicate').innerHTML = '비밀번호가 일치합니다.';
+            document.getElementById('pwDuplicate').setAttribute("style", "font-size: small; color: blue");
             this.property.pwDuplicateValue = 'checked';
         }
     }
@@ -160,43 +169,49 @@ class Join extends Component {
     render() {
         return(
             <div>
-                <h1>회원가입</h1>
-                <div>
-                    <h5>아이디</h5>
-                    <input type="text" name="joinId" id="joinId" maxLength="15" onChange={this.handleChange} placeholder="아이디를 입력해주세요"></input>
-                    <input type="button" name="duplicateCheck" value="중복체크" onClick={this.idDuplicateCheck}></input>
+                <Navigation/>
+                <div class="border border-dark rounded joinForm">
+                    <div class="font-weight-bold text-center m-5">
+                        SIGN UP
+                    </div>
+                    <div class="row mt-5 mb-2">
+                        <h6 className="col-lg-4 ml-1 mb-0 align-self-center">아이디</h6>
+                        <input type="text" name="joinId" id="joinId" class="form-control col-lg-5 mr-1" maxLength="15" onChange={this.handleChange} placeholder="아이디를 입력해주세요"></input>
+                        <input type="button" name="duplicateCheck" class="btn btn-dark col-lg-2" value="중복체크" onClick={this.idDuplicateCheck}></input>
+                    </div>
+                    <div class="row mt-2 mb-2">
+                        <h6 className="col-lg-4 ml-1 mb-0 align-self-center">비밀번호</h6>
+                        <input type="password" name="joinPassword" class="form-control col-lg-7" maxLength="15" onChange={this.handleChange} placeholder="비밀번호를 입력해주세요"></input>
+                    </div>
+                    <div id="pwDupDiv" class="row">
+                        <h6 className="col-lg-4 ml-1 mb-0 align-self-center">비밀번호 재확인</h6>
+                        <input type="password" name="duplicatePassword" class="form-control col-lg-7" maxLength="15" onChange={this.handleChange} placeholder="비밀번호를 재입력해주세요"></input>
+                    </div>
+                    <div class="row mt-2 mb-2">
+                        <h6 className="col-lg-4 ml-1 mb-0 align-self-center">이름</h6>
+                        <input type="text" name="name" class="form-control col-lg-7" onChange={this.handleChange} placeholder="이름을 입력해주세요"></input>
+                    </div>
+                    <div class="row mt-2 mb-2">
+                        <h6 className="col-lg-4 ml-1 mb-0 align-self-center">생년월일</h6>
+                        <input type="text" name="birthDate" class="form-control col-lg-7" maxLength="8" onChange={this.handleChange} placeholder="생년월일(8자리)"></input>
+                    </div>
+                    <div class="row mt-2 mb-2">
+                        <h6 className="col-lg-4 ml-1 mb-0 align-self-center">휴대전화(-없이입력)</h6>
+                        <input type="text" name="phoneNumber" class="form-control col-lg-7" maxLength="11" onChange={this.handleChange} placeholder="전화번호를 입력해주세요"></input>
+                    </div>
+                    <div class="row mt-2 mb-2">
+                        <h6 className="col-lg-4 ml-1 mb-0 align-self-center">주소</h6>
+                        <input type="text" name="address" class="form-control col-lg-7" nChange={this.handleChange} placeholder="주소를 입력해주세요"></input>
+                    </div>
+                    <div class="row mt-2">
+                        <h6 className="col-lg-4 ml-1 mb-0 align-self-center">이메일</h6>
+                        <input type="text" name="email" class="form-control col-lg-7" onChange={this.handleChange} placeholder="이메일을 입력해주세요"></input>
+                    </div>
+                    <div class="text-center m-2 mt-4">
+                        <input type="button" class="btn btn-dark col-lg-5" name="joinButton" value="가입하기" onClick={this.join}></input>
+                    </div>
                 </div>
-                <div>
-                    <h5>비밀번호</h5>
-                    <input type="password" name="joinPassword" maxLength="15" onChange={this.handleChange} placeholder="비밀번호를 입력해주세요"></input>
-                </div>
-                <div id="pwDupDiv">
-                    <h5>비밀번호 재확인</h5>
-                    <input type="password" name="duplicatePassword" maxLength="15" onChange={this.handleChange} placeholder="비밀번호를 재입력해주세요"></input>
-                </div>
-                <div>
-                    <h5>이름</h5>
-                    <input type="text" name="name" onChange={this.handleChange} placeholder="이름을 입력해주세요"></input>
-                </div>
-                <div>
-                    <h5>생년월일</h5>
-                    <input type="text" name="birthDate" maxLength="8" onChange={this.handleChange} placeholder="생년월일(8자리)"></input>
-                </div>
-                <div>
-                    <h5>휴대전화(-없이 입력)</h5>
-                    <input type="text" name="phoneNumber" maxLength="11" onChange={this.handleChange} placeholder="전화번호를 입력해주세요"></input>
-                </div>
-                <div>
-                    <h5>주소</h5>
-                    <input type="text" name="address" onChange={this.handleChange} placeholder="주소를 입력해주세요"></input>
-                </div>
-                <div>
-                    <h5>이메일</h5>
-                    <input type="text" name="email" onChange={this.handleChange} placeholder="이메일을 입력해주세요"></input>
-                </div>
-                <div>
-                    <input type="button" name="joinButton" value="가입하기" onClick={this.join}></input>
-                </div>
+                <Footer/>
             </div>
         );
     }
