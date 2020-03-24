@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 const propTypes = {
 };
 const defaultProps = {
 };
 class Navigation extends Component {
-    constructor(props) {
-        super(props);
-    }
     render() {
         return(
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">

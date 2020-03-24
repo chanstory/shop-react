@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 const propTypes = {
 };
@@ -14,13 +13,15 @@ class Row extends Component {
     }
 
     KRWFormat(number){
-        if(number==0) return 0;
+        if(number === 0) return 0;
 
         var reg = /(^[+-]?\d+)(\d{3})/;
         var n = (number + '');
 
-        while (reg.test(n)) n = n.replace(reg, '$1' + ',' + '$2');
-
+        while (reg.test(n)) {
+            n = n.replace(reg, '$1' + ',' + '$2');
+        }
+        
         return n;
     };
 

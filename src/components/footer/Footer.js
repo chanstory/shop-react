@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import './Footer.css';
 
@@ -8,9 +7,6 @@ const propTypes = {
 const defaultProps = {
 };
 class Footer extends Component {
-    constructor(props) {
-        super(props);
-    }
     render() {
         return(
             <footer className="py-5 bg-dark">

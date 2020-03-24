@@ -1,11 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-
-import axios from 'axios';
-
-import { Link } from 'react-router-dom';
-
-import { Jumbotron , Nav, NavItem, NavLink} from 'reactstrap';
 
 import './Main.css';
 
@@ -15,18 +8,11 @@ import Footer from '../footer/Footer';
 import MainImage from '../mainImage/MainImage';
 import Rows from '../row/Rows';
 
-import { decorate, observable, action } from 'mobx';
-import { observer } from 'mobx-react';
-
-
 const propTypes = {
 };
 const defaultProps = {
 };
 class Main extends Component {
-    constructor(props) {
-        super(props);
-    }
     render() {
         return(
             <div className="main">

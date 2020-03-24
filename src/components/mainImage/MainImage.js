@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 
 const propTypes = {
@@ -7,13 +6,10 @@ const propTypes = {
 const defaultProps = {
 };
 class MainImage extends Component {
-    constructor(props) {
-        super(props);
-    }
     render() {
         return(
             <div className="my-4">
-                <img src="/productImages/background.png"/>
+                <img src="/productImages/background.png" alt=""/>
             </div>
         );
     }

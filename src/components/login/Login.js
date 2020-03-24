@@ -64,21 +64,21 @@ class Login extends Component {
         return(
             <div>
                 <Navigation/>
-                <div class="border border-dark rounded text-center loginForm">
-                    <div class="font-weight-bold mt-5">
+                <div className="border border-dark rounded text-center loginForm">
+                    <div className="font-weight-bold mt-5">
                         ACCOUNT LOGIN
                     </div>
-                    <div class="m-1 mt-4">
-                        <input type="text" class="form-control col-lg-10 m-auto" name ="loginId" id="loginId" placeholder="id" onChange={this.handleChange}></input>
+                    <div className="m-1 mt-4">
+                        <input type="text" className="form-control col-lg-10 m-auto" name ="loginId" id="loginId" placeholder="id" onChange={this.handleChange}></input>
                     </div>
-                    <div class="m-1">
-                        <input type="password" class="form-control col-lg-10 m-auto" name="loginPassword" id="loginPassword" placeholder="password" onChange={this.handleChange}></input>
+                    <div className="m-1">
+                        <input type="password" className="form-control col-lg-10 m-auto" name="loginPassword" id="loginPassword" placeholder="password" onChange={this.handleChange}></input>
                     </div>
-                    <div class="mt-5 mb-2 ml-3 mr-3">
-                        <input type="button" class="btn btn-dark col-lg-10" id="login" value="LOG IN" onClick={this.login}></input>
+                    <div className="mt-5 mb-2 ml-3 mr-3">
+                        <input type="button" className="btn btn-dark col-lg-10" id="login" value="LOG IN" onClick={this.login}></input>
                     </div>
-                    <div class="m-2 ml-3 mr-3">
-                        <Link to="/join"><input type="button" class="btn btn-dark col-lg-10" id="join" value="회원가입"></input></Link>
+                    <div className="m-2 ml-3 mr-3">
+                        <Link to="/join"><input type="button" className="btn btn-dark col-lg-10" id="join" value="회원가입"></input></Link>
                     </div>
                 </div>
                 <Footer/>

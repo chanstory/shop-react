@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import Navigation from '../navigation/Navigation';
 import Category from '../category/Category';
@@ -11,9 +10,6 @@ const propTypes = {
 const defaultProps = {
 };
 class CategoryDetail extends Component {
-    constructor(props) {
-        super(props);
-    }
     render() {
         return(
             <div>
