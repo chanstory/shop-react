@@ -14,18 +14,14 @@ import LoginStore from '../../store/LoginStore.js';
 
 import './Login.css';
 
+const loginStore = new LoginStore();
+//const loginStore = new  LoginStore();
+
 @observer
 class Login extends Component {
 
     constructor(props) {
         super(props);
-
-        this.login = this.login.bind(this);
-    }
-
-    @action
-    handleChange = (e) => {
-        this.property[e.target.name] = e.target.value;
     }
 
     render() {
@@ -37,13 +33,13 @@ class Login extends Component {
                         ACCOUNT LOGIN
                     </div>
                     <div className="m-1 mt-4">
-                        <input type="text" className="form-control col-lg-10 m-auto" name ="loginId" id="loginId" placeholder="id" onChange={this.handleChange}></input>
+                        <input type="text" className="form-control col-lg-10 m-auto" name ="loginId" id="loginId" placeholder="id" onChange={loginStore.handleChange}></input>
                     </div>
                     <div className="m-1">
-                        <input type="password" className="form-control col-lg-10 m-auto" name="loginPassword" id="loginPassword" placeholder="password" onChange={this.handleChange}></input>
+                        <input type="password" className="form-control col-lg-10 m-auto" name="loginPassword" id="loginPassword" placeholder="password" onChange={loginStore.handleChange}></input>
                     </div>
                     <div className="mt-5 mb-2 ml-3 mr-3">
-                        <input type="button" className="btn btn-dark col-lg-10" id="login" value="LOG IN" onClick={LoginStore.login(this)}></input>
+                        <input type="button" className="btn btn-dark col-lg-10" id="login" value="LOG IN" onClick={() => loginStore.login(this)}></input>
                     </div>
                     <div className="m-2 ml-3 mr-3">
                         <Link to="/join"><input type="button" className="btn btn-dark col-lg-10" id="join" value="회원가입"></input></Link>

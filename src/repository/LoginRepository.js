@@ -1,13 +1,15 @@
 import axios from 'axios';
 
 class LoginRepository {
-  URL = "http://localhost:8081/v1";
+  URL = "http://localhost:8081/v1/";
 
   constructor() {
   }
 
   login(id, password) {
-    return axios.get(URL + "login?id="       + id +
+      console.log(this.URL + "login?id="       + id +
+                                  "&password=" + password);
+    return axios.get(this.URL + "login?id="       + id +
                                 "&password=" + password);
   }
 

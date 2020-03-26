@@ -2,6 +2,8 @@ import { observable, action } from 'mobx';
 
 import LoginRepository from '../repository/LoginRepository.js';
 
+import { Link } from 'react-router-dom';
+
 class LoginStore {
     @observable
     loginId : '';
@@ -9,32 +11,41 @@ class LoginStore {
     @observable
     loginPassword : '';
 
+    @observable
+    accessToken : '';
+
+    @observable
+    refreshToken : '';
+
     constructor(rootStore) {
         this.rootStore = rootStore;
+        this.login = this.login.bind(this);
     }
-
 
     @action
     handleChange = (e) => {
-        this.property[e.target.name] = e.target.value;
+        this[e.target.name] = e.target.value;
     }
 
-    
-    login(id, password, component){
-        if(this.property.loginId === ''){
+    @action
+    login(component){
+        if(!this.loginId){
             alert('아이디를 입력해주세요');
             return;
         }
 
-        if(this.property.loginPassword === ''){
+        if(!this.loginPassword){
             alert('비밀번호를 입력해주세요');
             return;
         }
 
-        LoginRepository.login()
+        var self = this;
+        LoginRepository.login(this.loginId, this.loginPassword)
         .then(function (response) {
-            console.log(response.data);
             if(response.data.success === true){
+                self.accessToken = response.data.data.access;
+                self.refreshToken = response.data.data.refresh;
+
                 component.props.history.push("/");
             }else{
                 alert(response.data.msg);
@@ -44,10 +55,8 @@ class LoginStore {
             alert('에러가 발생했습니다. 문제가 지속될 시 관리자에게 문의 해 주세요.');
         })
         .then(function () {
-            // always executed
         });
     }
-
 }
 
 export default LoginStore;
