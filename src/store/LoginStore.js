@@ -2,8 +2,6 @@ import { observable, action } from 'mobx';
 
 import LoginRepository from '../repository/LoginRepository.js';
 
-import { Link } from 'react-router-dom';
-
 class LoginStore {
     @observable
     loginId : '';

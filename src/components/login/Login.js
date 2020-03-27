@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 
-import axios from 'axios';
-
-import { observable, action } from 'mobx';
 import { observer } from 'mobx-react';
 
 import { Link } from 'react-router-dom';
@@ -15,11 +12,9 @@ import LoginStore from '../../store/LoginStore.js';
 import './Login.css';
 
 const loginStore = new LoginStore();
-//const loginStore = new  LoginStore();
 
 @observer
 class Login extends Component {
-
     constructor(props) {
         super(props);
     }
@@ -50,4 +45,5 @@ class Login extends Component {
         );
     }
 }
+
 export default Login;

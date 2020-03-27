@@ -7,8 +7,6 @@ class LoginRepository {
   }
 
   login(id, password) {
-      console.log(this.URL + "login?id="       + id +
-                                  "&password=" + password);
     return axios.get(this.URL + "login?id="       + id +
                                 "&password=" + password);
   }
