@@ -59,7 +59,7 @@ class Join extends Component {
                         <input type="text" name="email" className="form-control col-lg-7" onChange={userStore.handleChange} placeholder="이메일을 입력해주세요"></input>
                     </div>
                     <div className="text-center m-2 mt-4">
-                        <input type="button" className="btn btn-dark col-lg-5" name="joinButton" value="가입하기" onClick={userStore.join}></input>
+                        <input type="button" className="btn btn-dark col-lg-5" name="joinButton" value="가입하기" onClick={() => userStore.join(this)}></input>
                     </div>
                 </div>
                 <Footer/>

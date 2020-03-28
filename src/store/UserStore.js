@@ -114,7 +114,7 @@ class UserStore {
     }
 
 
-    join(){
+    join(component){
         var birthReg = /^(19[0-9][0-9]|20\d{2})(0[0-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])$/;
         var phoneReg = /(^02.{0}|^01.{1}|[0-9]{3})([0-9]{3,4})([0-9]{4})/g;
         var emailReg = /^[-A-Za-z0-9_]+[-A-Za-z0-9_.]*[@]{1}[-A-Za-z0-9_]+[-A-Za-z0-9_.]*[.]{1}[A-Za-z]{1,5}$/g;
@@ -150,8 +150,8 @@ class UserStore {
 
         var self = this;
         UserRepository.join({
-            joinId : self.joinId,
-            joinPassword : self.joinPassword,
+            uid : self.joinId,
+            password : self.joinPassword,
             name : self.name,
             birthDate : self.birthDate,
             phoneNumber : self.phoneNumber,
@@ -159,9 +159,10 @@ class UserStore {
             email : self.email
         })
         .then(function (response) {
-            if(response.data.result === 'success'){
+            console.log(response.data);
+            if(response.data.success === true){
                 alert('회원가입이 완료되었습니다.');
-                self.props.history.push("/");
+                component.props.history.push("/");
             }else{
                 alert('에러가 발생했습니다. 문제가 지속될 시 관리자에게 문의 해 주세요.');
             }
