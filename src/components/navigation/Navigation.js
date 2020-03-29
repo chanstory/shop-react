@@ -1,10 +1,19 @@
 import React, { Component } from 'react';
 
+import LoginStore from '../../store/LoginStore.js';
+const loginStore = new LoginStore();
+
 const propTypes = {
 };
 const defaultProps = {
 };
 class Navigation extends Component {
+    componentDidMount(){
+        if(loginStore.loginCheck()){
+
+        }
+    }
+
     render() {
         return(
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -16,9 +25,7 @@ class Navigation extends Component {
                 <div className="collapse navbar-collapse" id="navbarResponsive">
                   <ul className="navbar-nav ml-auto">
                     <li className="nav-item active">
-                      <a className="nav-link" href="/login">로그인
-                        <span className="sr-only">(current)</span>
-                      </a>
+                      <a className="nav-link" href="/login">로그인</a>
                     </li>
                     <li className="nav-item">
                       <a className="nav-link" href="/join">회원가입</a>

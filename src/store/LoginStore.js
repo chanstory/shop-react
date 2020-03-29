@@ -55,6 +55,15 @@ class LoginStore {
         .then(function () {
         });
     }
+
+    @action
+    loginCheck(){
+        if(!this.accessToken){
+            return true;
+        }
+
+        return false;
+    }
 }
 
 export default LoginStore;
