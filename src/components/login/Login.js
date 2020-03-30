@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
 
-import { observer } from 'mobx-react';
+import { observer, inject } from 'mobx-react';
 
 import { Link } from 'react-router-dom';
 
 import Navigation from '../navigation/Navigation';
 import Footer from '../footer/Footer';
 
-import LoginStore from '../../store/LoginStore.js';
-
 import './Login.css';
 
-const loginStore = new LoginStore();
-
+@inject('loginStore')
 @observer
 class Login extends Component {
     constructor(props) {
@@ -20,6 +17,8 @@ class Login extends Component {
     }
 
     render() {
+        const { loginStore } = this.props;
+
         return(
             <div>
                 <Navigation/>

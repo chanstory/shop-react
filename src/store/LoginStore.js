@@ -4,6 +4,9 @@ import LoginRepository from '../repository/LoginRepository.js';
 
 class LoginStore {
     @observable
+    isLogin : 'false';
+
+    @observable
     loginId : '';
 
     @observable
@@ -43,6 +46,8 @@ class LoginStore {
             if(response.data.success === true){
                 self.accessToken = response.data.data.access;
                 self.refreshToken = response.data.data.refresh;
+                
+                self.isLogin = 'true';
 
                 component.props.history.push("/");
             }else{
@@ -58,11 +63,7 @@ class LoginStore {
 
     @action
     loginCheck(){
-        if(!this.accessToken){
-            return true;
-        }
-
-        return false;
+        return this.isLogin;
     }
 }
 
