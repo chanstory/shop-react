@@ -8,7 +8,7 @@ class LoginRepository {
 
   login(id, password) {
     return axios.get(this.URL + "login?id="       + id +
-                                     "&password=" + password, {withCredentials :  true});
+                                     "&password=" + password, {withCredentials :  true}); //쿠키를 요청에 포함할 때 withCredentials 옵션을 true로 줘야함
   }
 
 }
