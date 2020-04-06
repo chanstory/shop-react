@@ -27,9 +27,14 @@ class App extends Component {
 
     render() {
         return(
-            <div>
-                test
-            </div>
+            <Provider rootStore = { rootStore } loginStore = {rootStore.login} userStore = {rootStore.user}>
+                <BrowserRouter>
+                    <Route exact path="/" component={Main}/>
+                    <Route exact path="/join" component={Join}/>
+                    <Route exact path="/login" component={Login}/>
+                    <Route exact path="/category-detail/:item" component={CategoryDetail}/>
+                </BrowserRouter>
+            </Provider>
         );
     }
 }
