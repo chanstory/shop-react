@@ -44,9 +44,7 @@ class LoginStore {
         LoginRepository.login(this.loginId, this.loginPassword)
         .then(function (response) {
             if(response.data.success === true){
-                self.accessToken = response.data.data.access;
-                self.refreshToken = response.data.data.refresh;
-                
+
                 self.isLogin = 'true';
 
                 component.props.history.push("/");
@@ -56,6 +54,24 @@ class LoginStore {
         })
         .catch(function (error) {
             alert('에러가 발생했습니다. 문제가 지속될 시 관리자에게 문의 해 주세요.');
+        })
+        .then(function () {
+        });
+    }
+
+    @action
+    logout(component){
+        var self = this;
+        LoginRepository.logout()
+        .then(function (response) {
+            if(response.data.success === true){
+                self.isLogin = 'false';
+            }else{
+                alert(response.data.msg);
+            }
+        })
+        .catch(function (error) {
+            alert(error);
         })
         .then(function () {
         });
