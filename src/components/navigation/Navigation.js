@@ -19,7 +19,7 @@ class Navigation extends Component {
 
     componentDidMount(){
         const { loginStore } = this.props;
-
+        
         if(loginStore.loginCheck()){
             this.setState({signButton : <a className="nav-link" href="#" onClick={() => loginStore.logout(this)}>로그아웃</a>});
         }else{

@@ -44,7 +44,6 @@ class LoginStore {
         LoginRepository.login(this.loginId, this.loginPassword)
         .then(function (response) {
             if(response.data.success === true){
-
                 self.isLogin = 'true';
 
                 component.props.history.push("/");
@@ -65,7 +64,10 @@ class LoginStore {
         LoginRepository.logout()
         .then(function (response) {
             if(response.data.success === true){
-                self.isLogin = 'false';
+                self.isLogin = false;
+                component.componentDidMount();
+
+                alert('로그아웃 되었습니다.');
             }else{
                 alert(response.data.msg);
             }
