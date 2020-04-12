@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 const propTypes = {
 };
@@ -8,9 +9,9 @@ class Category extends Component {
     render() {
         return(
             <div className="list-group my-4">
-                <a href="/category-detail/cpu" className="list-group-item">CPU</a>
-                <a href="/category-detail/graphicscard" className="list-group-item">그래픽카드</a>
-                <a href="/category-detail/ram" className="list-group-item">램</a>
+                <Link className="list-group-item" to="/category-detail/cpu">CPU</Link>
+                <Link className="list-group-item" to="/category-detail/graphicscard">그래픽카드</Link>
+                <Link className="list-group-item" to="/category-detail/ram">램</Link>
             </div>
         );
     }

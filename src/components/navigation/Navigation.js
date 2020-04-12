@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
+import { Link } from 'react-router-dom';
 
 import LoginStore from '../../store/LoginStore.js';
 
@@ -24,11 +25,11 @@ class Navigation extends Component {
 
     setSignButton(){
         const { loginStore } = this.props;
-        
+
         if(loginStore.loginCheck()){
-            this.setState({signButton : <a className="nav-link" href="#" onClick={() => loginStore.logout(this)}>로그아웃</a>});
+            this.setState({signButton : <Link className="nav-link" to="#" onClick={() => loginStore.logout(this)}>로그아웃</Link>});
         }else{
-            this.setState({signButton : <a className="nav-link" href="/login">로그인</a>});
+            this.setState({signButton : <Link className="nav-link" to="/login">로그인</Link>});
         }
     }
 
@@ -36,7 +37,7 @@ class Navigation extends Component {
         return(
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
                 <div className="container">
-                    <a className="navbar-brand" href="/">태찬컴퓨터</a>
+                    <Link className="navbar-brand" to="/">태찬컴퓨터</Link>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -46,16 +47,16 @@ class Navigation extends Component {
                                 {this.state.signButton}
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/join">회원가입</a>
+                                <Link className="nav-link" to="/join">회원가입</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">마이페이지</a>
+                                <Link className="nav-link" to="#">마이페이지</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">주문조회</a>
+                                <Link className="nav-link" to="#">주문조회</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">장바구니</a>
+                                <Link className="nav-link" to="#">장바구니</Link>
                             </li>
                         </ul>
                     </div>

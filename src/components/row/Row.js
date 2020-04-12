@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 const propTypes = {
 };
@@ -21,23 +22,23 @@ class Row extends Component {
         while (reg.test(n)) {
             n = n.replace(reg, '$1' + ',' + '$2');
         }
-        
+
         return n;
     };
 
     render() {
         return(
             <div className="col-lg-4 col-md-6 mb-4">
-              <div className="card h-100">
-                <a href="#"><img className="card-img-top" src={this.props.product.imageName} alt=""/></a>
-                <div className="card-body">
-                  <h6 className="card-title">
-                    <a href="#">{this.props.product.name}</a>
-                  </h6>
-                  <h6>{this.KRWFormat(this.props.product.price)}원</h6>
-                  <p className="card-text">{this.props.product.description}</p>
+                <div className="card h-100">
+                    <Link to="#"><img className="card-img-top" src={this.props.product.imageName} alt=""/></Link>
+                    <div className="card-body">
+                        <h6 className="card-title">
+                            <Link to="#">{this.props.product.name}</Link>
+                        </h6>
+                        <h6>{this.KRWFormat(this.props.product.price)}원</h6>
+                        <p className="card-text">{this.props.product.description}</p>
+                    </div>
                 </div>
-              </div>
             </div>
         );
     }

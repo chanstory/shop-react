@@ -159,7 +159,6 @@ class UserStore {
             email : self.email
         })
         .then(function (response) {
-            console.log(response.data);
             if(response.data.success === true){
                 alert('회원가입이 완료되었습니다.');
                 component.props.history.push("/");
