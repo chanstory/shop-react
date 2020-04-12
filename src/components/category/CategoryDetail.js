@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import './CategoryDetail.css';
+
 import Navigation from '../navigation/Navigation';
 import Category from '../category/Category';
 import Footer from '../footer/Footer';
@@ -12,7 +14,7 @@ const defaultProps = {
 class CategoryDetail extends Component {
     render() {
         return(
-            <div>
+            <div className="categoryDetail">
 
                 <Navigation/>
                 {/*Page Content*/}

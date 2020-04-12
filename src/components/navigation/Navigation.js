@@ -15,9 +15,14 @@ class Navigation extends Component {
     constructor(props) {
         super(props);
         this.state = {signButton : ''};
+
     }
 
     componentDidMount(){
+        this.setSignButton();
+    }
+
+    setSignButton(){
         const { loginStore } = this.props;
         
         if(loginStore.loginCheck()){

@@ -65,7 +65,7 @@ class LoginStore {
         .then(function (response) {
             if(response.data.success === true){
                 self.isLogin = false;
-                component.componentDidMount();
+                component.setSignButton();
 
                 alert('로그아웃 되었습니다.');
             }else{
