@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { observer, inject } from 'mobx-react';
+
 import './CategoryDetail.css';
 
 import Navigation from '../navigation/Navigation';
@@ -11,11 +13,31 @@ const propTypes = {
 };
 const defaultProps = {
 };
-class CategoryDetail extends Component {
-    render() {
-        return(
-            <div className="categoryDetail">
 
+@inject('productStore')
+@observer
+class CategoryDetail extends Component {
+    constructor(props) {
+        super(props);
+        this.child = React.createRef();
+    }
+
+    componentDidMount() {
+        this.getProducts();
+    }
+
+    componentDidUpdate() {
+        this.getProducts();
+    }
+
+    getProducts(){
+        const { productStore } = this.props;
+        productStore.getProduct("kind", this.props.match.params.item, this.child.current);
+    }
+
+    render() {
+        return (
+            <div className="categoryDetail">
                 <Navigation/>
                 {/*Page Content*/}
                 <div className="container">
@@ -25,7 +47,7 @@ class CategoryDetail extends Component {
                         </div>
                         {/*.col-lg-3 end*/}
                         <div className="col-lg-9">
-                            <Rows condition="kind" value={this.props.match.params.item}/>
+                            <Rows ref={this.child}/>
                             {/*.row end*/}
                         </div>
                         {/*.col-lg-9 end*/}
