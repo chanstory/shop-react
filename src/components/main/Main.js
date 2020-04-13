@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { observer, inject } from 'mobx-react';
+
 import './Main.css';
 
 import Navigation from '../navigation/Navigation';
@@ -12,7 +14,24 @@ const propTypes = {
 };
 const defaultProps = {
 };
+
+@inject('productStore')
+@observer
 class Main extends Component {
+    constructor(props) {
+        super(props);
+        this.child = React.createRef();
+    }
+
+    componentDidMount() {
+        this.getProducts();
+    }
+
+    getProducts(){
+        const { productStore } = this.props;
+        productStore.getProduct("count", 12, this.child.current);
+    }
+
     render() {
         return(
             <div className="main">
@@ -26,7 +45,7 @@ class Main extends Component {
                         {/*.col-lg-3 end*/}
                         <div className="col-lg-9">
                             <MainImage/>
-                            <Rows  condition="count" value="12"/>
+                            <Rows ref={this.child}/>
                             {/*.row end*/}
                         </div>
                         {/*.col-lg-9 end*/}
