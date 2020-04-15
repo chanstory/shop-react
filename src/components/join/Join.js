@@ -20,7 +20,6 @@ class Join extends Component {
     render() {
         return(
             <div>
-                <Navigation/>
                 <div className="border border-dark rounded joinForm">
                     <div className="font-weight-bold text-center m-5">
                         SIGN UP
@@ -62,7 +61,6 @@ class Join extends Component {
                         <input type="button" className="btn btn-dark col-lg-5" name="joinButton" value="가입하기" onClick={() => userStore.join(this)}></input>
                     </div>
                 </div>
-                <Footer/>
             </div>
         );
     }

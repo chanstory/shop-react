@@ -21,7 +21,6 @@ class Login extends Component {
 
         return(
             <div>
-                <Navigation/>
                 <div className="border border-dark rounded text-center loginForm">
                     <div className="font-weight-bold mt-5">
                         ACCOUNT LOGIN
@@ -39,7 +38,6 @@ class Login extends Component {
                         <Link to="/join"><input type="button" className="btn btn-dark col-lg-10" id="join" value="회원가입"></input></Link>
                     </div>
                 </div>
-                <Footer/>
             </div>
         );
     }

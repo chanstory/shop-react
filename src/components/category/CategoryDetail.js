@@ -38,7 +38,6 @@ class CategoryDetail extends Component {
     render() {
         return (
             <div className="categoryDetail">
-                <Navigation/>
                 {/*Page Content*/}
                 <div className="container">
                     <div className="row">
@@ -55,7 +54,6 @@ class CategoryDetail extends Component {
                     {/*.row end*/}
                 </div>
                 {/*.container end*/}
-                <Footer/>
             </div>
         );
     }

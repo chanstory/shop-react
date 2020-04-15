@@ -4,9 +4,7 @@ import { observer, inject } from 'mobx-react';
 
 import './Main.css';
 
-import Navigation from '../navigation/Navigation';
 import Category from '../category/Category';
-import Footer from '../footer/Footer';
 import MainImage from '../mainImage/MainImage';
 import Rows from '../row/Rows';
 
@@ -35,7 +33,6 @@ class Main extends Component {
     render() {
         return(
             <div className="main">
-                <Navigation/>
                 {/*Page Content*/}
                 <div className="container">
                     <div className="row">
@@ -53,7 +50,6 @@ class Main extends Component {
                     {/*.row end*/}
                 </div>
                 {/*.container end*/}
-                <Footer/>
             </div>
         );
     }
