@@ -50,13 +50,10 @@ class Navigation extends Component {
                                 <Link className="nav-link" to="/join">회원가입</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="#">마이페이지</Link>
+                                <Link className="nav-link" to="/mypage">마이페이지</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="#">주문조회</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="#">장바구니</Link>
+                                <Link className="nav-link" to="/cart">장바구니</Link>
                             </li>
                         </ul>
                     </div>

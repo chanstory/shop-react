@@ -9,7 +9,7 @@ const defaultProps = {
 class Footer extends Component {
     render() {
         return(
-            <footer className="py-5 bg-dark">
+            <footer className="py-4 bg-dark">
               <div className="container">
                 <p className="m-0 text-center text-white">Copyright &copy; 태찬컴퓨터 2020</p>
               </div>

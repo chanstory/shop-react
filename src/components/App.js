@@ -7,9 +7,11 @@ import { Provider } from 'mobx-react';
 import Login from './login/Login';
 import Join from './join/Join';
 import Main from './main/Main';
+import Cart from './cart/Cart';
+import MyPage from './myPage/MyPage';
+import CategoryDetail from './category/CategoryDetail';
 import Navigation from './navigation/Navigation';
 import Footer from './footer/Footer';
-import CategoryDetail from './category/CategoryDetail';
 
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -33,9 +35,11 @@ class App extends Component {
                 <BrowserRouter>
                     <Navigation/>
                     <Route exact path="/" component={Main}/>
-                    <Route exact path="/join" component={Join}/>
-                    <Route exact path="/login" component={Login}/>
-                    <Route exact path="/category-detail/:item" component={CategoryDetail}/>
+                    <Route path="/join" component={Join}/>
+                    <Route path="/login" component={Login}/>
+                    <Route path="/cart" component={Cart}/>
+                    <Route path="/mypage" component={MyPage}/>
+                    <Route path="/category-detail/:item" component={CategoryDetail}/>
                     <Footer/>
                 </BrowserRouter>
             </Provider>
