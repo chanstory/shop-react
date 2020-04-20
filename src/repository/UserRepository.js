@@ -7,11 +7,12 @@ class UserRepository {
     }
 
     idDuplicateCheck(id){
-        return axios.get(this.URL + "user/duplicate-check/" + id, {withCredentials :  true});
+        return axios.get(this.URL + "user/duplicate-check/" + id, {withCredentials: true});
     }
 
     join(params){
-        return axios.post(this.URL + "join", params, {withCredentials :  true});
+        console.log(params);
+        return axios.post(this.URL + "join", params, {withCredentials: true});
     }
 }
 

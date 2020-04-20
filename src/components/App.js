@@ -33,7 +33,6 @@ class App extends Component {
         return(
             <Provider rootStore = { rootStore } loginStore = {rootStore.login} userStore = {rootStore.user} productStore = {rootStore.product}>
                 <BrowserRouter>
-                    <Navigation/>
                     <Route exact path="/" component={Main}/>
                     <Route path="/join" component={Join}/>
                     <Route path="/login" component={Login}/>
