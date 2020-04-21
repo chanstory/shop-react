@@ -36,7 +36,10 @@ class Main extends Component {
 
     test(){
         console.log("dd");
-        axios.post("http://localhost:8081/v1/product", this.state, {withCredentials :  true})
+        axios.post("http://localhost:8081/v1/product", this.state,
+            {withCredentials :  true,
+             headers:{'Content-Type' : 'multipart/form-data'}
+        })
         .then(function (response) {
             console.log("success");
         })
